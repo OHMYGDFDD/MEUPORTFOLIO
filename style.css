@@ -1,0 +1,184 @@
+/* Reset e fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Fundo animado */
+body {
+    height: 100vh;
+    background: linear-gradient(270deg, #0a1f44, #001933, #003366);
+    background-size: 600% 600%;
+    animation: gradientBG 12s ease infinite;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Container principal */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.4);
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Foto animada */
+.foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: url('foto.perfil.jpg..jpg') center/cover no-repeat;
+    border: 4px solid cyan;
+    margin: 0 auto 20px;
+    animation: brilhoBorda 3s infinite alternate;
+}
+
+@keyframes brilhoBorda {
+    0% { box-shadow: 0 0 10px cyan; }
+    100% { box-shadow: 0 0 30px cyan; }
+}
+
+/* Títulos */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: cyan;
+    text-shadow: 0 0 15px cyan;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Sobre mim */
+.sobre {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.sobre h2 {
+    color: cyan;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px cyan;
+}
+
+.sobre p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Habilidades */
+.habilidades {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.habilidades h2 {
+    color: cyan;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px cyan;
+}
+
+.skill {
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.barra {
+    width: 100%;
+    height: 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progresso {
+    height: 100%;
+    width: 0%;
+    border-radius: 8px;
+    animation: preencher 2s forwards;
+}
+
+.progresso.python { background: #306998; animation-delay: 0.2s; width: 90%; }
+.progresso.html { background: #e34c26; animation-delay: 0.4s; width: 95%; }
+.progresso.css { background: #264de4; animation-delay: 0.6s; width: 90%; }
+.progresso.js { background: #f0db4f; animation-delay: 0.8s; width: 80%; }
+
+@keyframes preencher {
+    0% { width: 0%; }
+    100% { width: inherit; }
+}
+
+/* Redes sociais */
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.redes a {
+    color: #0a1f44;
+    font-weight: bold;
+    text-decoration: none;
+    background: cyan;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+    animation: pulsar 2s infinite;
+}
+
+@keyframes pulsar {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 10px cyan; }
+    50% { transform: scale(1.1); box-shadow: 0 0 20px cyan; }
+}
+
+.redes a:hover {
+    background: white;
+    color: #0a1f44;
+}
+
+@media (max-width: 600px) {
+    .foto {
+        width: 40vw;
+        height: 40vw;
+    }
+}
